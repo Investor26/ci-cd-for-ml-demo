@@ -11,6 +11,10 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+# Grant write permissions to pr-workflow branch
+permissions:
+  pull-requests: write
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -48,4 +52,12 @@ jobs:
       - name: Run Python script
         run: |
           echo hello
-          python hello_world.py
+          python ./hello_world.py
+
+      # Comment PR
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          message: |
+            Hello world ! :wave:
