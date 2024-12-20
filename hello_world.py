@@ -7,5 +7,5 @@ def main():
   current_time = datetime.datetime.now() 
   print("Current time:", current_time) 
 
-if __ name __ == " __ main __ ":
+if __name__ == " __main__ ":
     main()
