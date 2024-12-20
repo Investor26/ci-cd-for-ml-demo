@@ -48,6 +48,4 @@ jobs:
       - name: Run Python script
         run: |
           echo hello
-          world.py
-          python hello
-          world.py
+          python world.py
